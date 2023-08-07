@@ -1,0 +1,13 @@
+---
+- name: Install Python requests library
+  hosts: localhost
+  become: yes
+
+  tasks:
+    - name: Install requests module
+      pip:
+        name: requests
+        state: present
+
+    - name: Run Python script
+      command: "python GetData.py"
